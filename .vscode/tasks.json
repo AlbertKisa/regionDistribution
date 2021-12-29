@@ -1,0 +1,48 @@
+{
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "D:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "${workspaceFolder}\\*.cpp",
+                "-o",
+                "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe",
+                "-fdiagnostics-color=always",
+                "-g",
+                "-Wall",
+                "-static-libgcc",
+                "-fexec-charset=GBK",
+                "-std=c++11"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "detail": "调试器生成的任务。"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "dependsOn": "build",
+            "command": "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            }
+        },
+      ],
+    "version": "2.0.0"
+}
