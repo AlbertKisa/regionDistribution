@@ -22,10 +22,22 @@ private:
 public:
     RegionDiv();
     RegionDiv(double r);
+
     //USV编组探测范围计算函数
-    vector<double> calswarm_ability(vector<vector<int>> &abilityUSV, vector<int> &numswarm);
+    vector<double> calswarm_ability(const vector<vector<int>> &abilityUSV, const vector<int> &numswarm);
+
+    //USV编组探测区域分配函数
+    vector<double> areaassignment(const vector<vector<int>> &mission_area_coor, const vector<vector<int>> &groupCenterPoint, vector<double> &duswarm, int direction);
+
     //vector求和函数
     double vector_sum(const vector<double> &detad);
+    
+    //两点距离计算函数
+    double cal_distance(const int p1[2][1], const int p2[2][1]);
+
+    //排序函数
+    void bubblesort(const float *p, int length, int * ind_diff);
+
 };
 
 #endif
